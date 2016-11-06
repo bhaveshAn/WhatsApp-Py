@@ -1,0 +1,73 @@
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+
+ScreenManagement:
+	transition: FadeTransition()
+	FirstScreen:
+	CountryOption:
+	VerificationCode:
+
+
+<FirstScreen>:
+	name:'first_screen'
+	
+	BoxLayout:
+		id:b1
+		orientation:'vertical'
+		Label:
+			font_size:40
+			text:"Welcome to WhatsApp"
+		Image:
+		Label:
+			markup: True
+			text:'Tap "Agree and continue" to accept the [color=]WhatsApp Terms of Service and Privacy Policy[/color].'
+		Button:
+			text:'Agree and Continue'
+			on_release:app.root.current='verify_no'
+
+
+<CountryOption>:
+	name:"country_option"
+	BoxLayout:
+		orientation:'vertical'
+		BoxLayout:
+			Button:
+				font_size:20
+				text:'<--'
+				on_release:app.root.current='first_screen'
+			Label:
+				text:"Choose a country"
+		ListView:
+			Label:
+				markup:True
+				text:'[b]country_name[/b]       country_code'
+
+
+<VerificationCode>:
+	name:'verify_no'
+	BoxLayout:
+		orientation: 'vertical'
+		Label:
+			markup:True
+			text:'[color=]Verify your phone number[/color]'
+		Label:
+			text:'WhatsApp will send an SMS message to verify your phone number. Enter your country code and phone number:'
+		TextInput:
+			font_size:25
+			on_focus=app.root.current='country_option'
+		BoxLayout:
+			TextInput:
+				font_size:25
+			TextInput:
+				id:ph_no
+				font_size:25
+		Button:
+			text:'NEXT'
+			padding:10
+			on_release:
+		Label:
+			text:"Carrier SMS charges may apply"
+
+
+
+
+
