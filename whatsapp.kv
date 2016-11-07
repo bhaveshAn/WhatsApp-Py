@@ -67,7 +67,24 @@ ScreenManagement:
 		Label:
 			text:"Carrier SMS charges may apply"
 
-
+<verify@PopUp>:
+	Label:
+		text:'We will be verifying the phone number./n[b]'+str(country_code)+'  '+str(ph_no)+'[/b]'
+<Verify@Screen>:
+	BoxLayout:
+		orientation:'vertical'
+		Label:
+			text:'Verify'+str(country_code)+str(ph_no)
+		Label:
+			text:'Waiting to automatically detext an SMS sent to [b]'+str(country_code)+' '+str(ph_no)+'[/b].'+'[color=]Wrong number?[/color]'
+		TextInput:
+			text:'--- ---'
+		Label:
+			text:'Enter 6-digit code'
+		Button:
+			text:'Resend SMS'
+		Button:
+			text:'Call Me'	
 
 
 
