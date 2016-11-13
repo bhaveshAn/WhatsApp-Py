@@ -53,7 +53,7 @@ ScreenManagement:
 			text:'WhatsApp will send an SMS message to verify your phone number. Enter your country code and phone number:'
 		TextInput:
 			font_size:25
-			on_focus=app.root.current='country_option'
+			on_focus:app.root.current='country_option'
 		BoxLayout:
 			TextInput:
 				font_size:25
@@ -62,7 +62,7 @@ ScreenManagement:
 				font_size:25
 		Button:
 			text:'NEXT'
-			padding:10
+			padding:10,10
 			on_release:
 		Label:
 			text:"Carrier SMS charges may apply"
