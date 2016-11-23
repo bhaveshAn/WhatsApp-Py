@@ -1,5 +1,5 @@
 import kivy
-kivy.require('1.8.0')
+kivy.require('1.9.1')
 from kivy.app import App 
 from kivy.lang import Builder
 from kivy.uix.boxlayout import BoxLayout 
